@@ -1,0 +1,16 @@
+<div class="main category-show">
+  <div class="container">
+    <div class="category">
+        <h3 class="category-name"><%= @category.name %></h3>
+    </div>
+
+    <h2>Articles</h2>
+    <% @articles.each do |article| %>
+    <div class="article">
+      <h3 class="article-title"><%= article.title %></h3>
+      <p class="article-summary"><%= article.summary %></p>
+      <p class="article-link"><%= article.link %></p>
+    </div>
+		<% end %>
+  </div>
+</div>

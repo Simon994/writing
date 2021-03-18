@@ -2,4 +2,5 @@
 
 Rails.application.routes.draw do
   get '/categories' => 'categories#index'
+  get '/categories/:id' => 'categories#show', as: :category
 end
