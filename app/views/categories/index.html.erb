@@ -1,0 +1,15 @@
+<div class="hero">
+  <div class="container">
+    <h2>Subject categories</h2>
+  </div>
+</div>
+
+<div class="main">
+  <div class="container">
+    <% @categories.each do |category| %>
+    <div class="category">
+      <h3><%= category.name %></h3>
+    </div>
+    <% end %>
+  </div>
+</div>
