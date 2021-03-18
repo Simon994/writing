@@ -9,7 +9,7 @@
     <div class="article">
       <h3 class="article-title"><%= article.title %></h3>
       <p class="article-summary"><%= article.summary %></p>
-      <p class="article-link"><%= article.link %></p>
+      <%= link_to "Read", article.link, target: :_blank %>
     </div>
 		<% end %>
   </div>
