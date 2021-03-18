@@ -1,15 +1,16 @@
 <div class="main category-show">
   <div class="container">
-    <div class="category">
+    <div class="category-header">
         <h3 class="category-name"><%= @category.name %></h3>
+        <h2>Articles</h2>
+        <%= link_to "Back to browse", categories_path, :class => 'to-browse' %>
     </div>
 
-    <h2>Articles</h2>
     <% @articles.each do |article| %>
     <div class="article">
       <h3 class="article-title"><%= article.title %></h3>
       <p class="article-summary"><%= article.summary %></p>
-      <%= link_to "Read", article.link, target: :_blank %>
+      <%= link_to "Read", article.link, target: :_blank, :class => 'read-article' %>
     </div>
 		<% end %>
   </div>

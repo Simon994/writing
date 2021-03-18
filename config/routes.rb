@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'categories#index'
-  get '/categories' => 'categories#index'
+  root 'categories#index', as: :categories
   get '/categories/:id' => 'categories#show', as: :category
-  get '/articles' => 'articles#index'
+  get '/articles' => 'articles#index', as: :articles
 end
