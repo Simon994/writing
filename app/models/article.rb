@@ -7,8 +7,14 @@ class Article < ApplicationRecord
 
   validate :validate_length_of_summary
 
+  before_save :capitalize_article_title
+
   has_many :parts
   has_many :categories, through: :parts
+
+  def capitalize_article_title
+    self.title = title.upcase
+  end
 
   def validate_length_of_summary
     errors.add(:summary, 'Length should be at least 40 and at most 200 characters') if summary.present? && ((summary.size < 40) || (summary.size > 200))
