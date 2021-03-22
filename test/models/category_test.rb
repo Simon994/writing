@@ -11,6 +11,5 @@ class CategoryTest < ActiveSupport::TestCase
     create(:category)
     create(:category)
     assert_equal 4, Category.count
-    Rails.logger.debug Category.pluck(:name)
   end
 end
