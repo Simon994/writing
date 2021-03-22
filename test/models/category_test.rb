@@ -9,6 +9,8 @@ class CategoryTest < ActiveSupport::TestCase
   test 'category_count' do
     assert_equal 2, Category.count
     create(:category)
-    assert_equal 3, Category.count
+    create(:category)
+    assert_equal 4, Category.count
+    Rails.logger.debug Category.pluck(:name)
   end
 end
