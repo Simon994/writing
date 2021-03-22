@@ -6,4 +6,9 @@ class CategoryTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+  test 'category_count' do
+    assert_equal 2, Category.count
+    create(:category)
+    assert_equal 3, Category.count
+  end
 end
