@@ -8,10 +8,10 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
   # end
   setup do
     @category_one = categories(:magazines)
-    @category_two = categories(:news)
+    # @category_two = categories(:news)
   end
 
-  test 'should get index, as categories_path and assign instance variable to view' do
+  test 'should get index, as categories_path, and assign categories instance variable to view' do
     get categories_path
     assert_response :success
     assert_not_nil assigns(:categories)
@@ -23,9 +23,11 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
     assert_template 'categories/index'
   end
 
-  test 'index includes both categories' do
-    skip('to write')
+  test 'index includes the same number of links as there are number of categories' do
     get categories_path
+    assert_select('div.category') do |_element|
+      assert_select 'a', Category.all.length
+    end
   end
 
   test 'should show category' do
