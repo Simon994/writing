@@ -7,19 +7,29 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
   #   assert true
   # end
   setup do
-    @category = categories(:magazines)
+    @category_one = categories(:magazines)
+    @category_two = categories(:news)
   end
 
-  test 'should get index, as categories_path' do
+  test 'should get index, as categories_path and assign instance variable to view' do
     get categories_path
     assert_response :success
-    assert_select 'h2', 'Writing'
-    assert_select 'h3', 'Explore my written work'
+    assert_not_nil assigns(:categories)
+    assert_equal Category.all, assigns(:categories)
+  end
+
+  test 'index template renders' do
+    get categories_path
+    assert_template 'categories/index'
+  end
+
+  test 'index includes both categories' do
+    skip('to write')
+    get categories_path
   end
 
   test 'should show category' do
-    get category_path(@category)
+    get category_path(@category_one)
     assert_response :success
-    assert_select 'h3', @category.name
   end
 end
