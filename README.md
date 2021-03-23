@@ -6,7 +6,7 @@ Live version [here](https://pacific-brushlands-24977.herokuapp.com/)
 ## Technologies
 * Ruby on Rails (6.1.3)
 * Factory Bot Rails
-* Rubocop, for linting
+* RuboCop, for linting
 
 ## Install
 * Clone or download the repo
