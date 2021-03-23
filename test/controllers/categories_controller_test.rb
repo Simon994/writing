@@ -8,7 +8,7 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
   # end
   setup do
     @category_one = categories(:magazines)
-    # @category_two = categories(:news)
+    @category_two = categories(:news)
   end
 
   test 'should get index, as categories_path, and assign categories instance variable to view' do
@@ -33,5 +33,10 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
   test 'should show category' do
     get category_path(@category_one)
     assert_response :success
+  end
+
+  test 'show template renders' do
+    get category_path(@category_two)
+    assert_template 'categories/show'
   end
 end
