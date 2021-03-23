@@ -26,6 +26,7 @@ class CategoriesTest < ApplicationSystemTestCase
     visit categories_path
     click_on @factory_category.name
     assert_current_path category_path(@factory_category)
-    # assert page.has_content?(@one.title)
+    assert page.has_content?(@factory_article.title)
+    assert page.has_content?(@factory_article.summary)
   end
 end
