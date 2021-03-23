@@ -4,9 +4,9 @@ require 'test_helper'
 
 class ArticleTest < ActiveSupport::TestCase
   test 'article count' do
-    create(:article)
-    create(:article)
     assert_equal 2, Article.count
+    create(:article)
+    assert_equal 3, Article.count
   end
 
   test 'should error when saving article with no title' do

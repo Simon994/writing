@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :category do
-    name { 'Beans and more beans' }
+  factory :part do
+    article
+    category
   end
 end

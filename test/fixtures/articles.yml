@@ -4,8 +4,12 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-# one: {}
-# # column: value
-# #
-# two: {}
-# column: value
+one:
+  title: 'An interesting article'
+  link: 'linkexample.link'
+  summary: 'This is an interesting article, summarized here. More interesting info...'
+#
+two:
+  title: 'Another interesting article'
+  link: 'linkexample2.link'
+  summary: 'This is yet another interesting article, summarized here. More interesting info...'

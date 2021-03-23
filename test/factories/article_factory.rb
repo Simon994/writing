@@ -2,8 +2,8 @@
 
 FactoryBot.define do
   factory :article do
-    title { Faker::Lorem.sentence(word_count: 4) }
-    link { Faker::Internet.url }
-    summary { Faker::Lorem.paragraph_by_chars(number: 100) }
+    title { 'A manually created factory article' }
+    link { 'anexamplelink.link' }
+    summary { 'Beans beans beans beans beans beans. Some more beans.' }
   end
 end

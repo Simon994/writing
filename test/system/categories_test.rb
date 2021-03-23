@@ -17,4 +17,15 @@ class CategoriesTest < ApplicationSystemTestCase
     visit category_path(@category)
     assert_selector 'h3', text: @category.name
   end
+
+  test 'click on category changes path to appropriate show page' do
+    @factory_category = create(:category)
+    @factory_article = create(:article)
+    @factory_category.articles << @factory_article
+
+    visit categories_path
+    click_on @factory_category.name
+    assert_current_path category_path(@factory_category)
+    # assert page.has_content?(@one.title)
+  end
 end
