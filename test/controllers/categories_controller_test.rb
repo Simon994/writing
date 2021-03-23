@@ -23,11 +23,9 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
     assert_template 'categories/index'
   end
 
-  test 'index includes the same number of links as there are number of categories' do
+  test 'index includes expected number of category links' do
     get categories_path
-    assert_select('div.category') do |_element|
-      assert_select 'a', Category.all.length
-    end
+    assert_select 'div.category a', Category.all.length
   end
 
   test 'should show category' do
