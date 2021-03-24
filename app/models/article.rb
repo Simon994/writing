@@ -21,6 +21,17 @@ class Article < ApplicationRecord
   end
 
   def as_json(_options = nil)
-    super(include: [:categories])
+    hash = super(
+      include: {
+        categories: {
+          except: %i[updated_at created_at id]
+        }
+      },
+      except: %i[created_at updated_at]
+    )
+
+    hash.store(:article_title, hash.delete('title'))
+
+    hash
   end
 end
