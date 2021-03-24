@@ -19,4 +19,8 @@ class Article < ApplicationRecord
   def validate_length_of_summary
     errors.add(:summary, 'Length should be at least 40 and at most 200 characters') if summary.present? && ((summary.size < 40) || (summary.size > 200))
   end
+
+  def as_json(_options = nil)
+    super(include: [:categories])
+  end
 end
